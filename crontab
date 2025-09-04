@@ -1,0 +1,4 @@
+# Executa o pipeline de segunda a sexta-feira, às 22:00
+0 22 * * 1-5 python /app/dsaprojeto1_agendado.py >> /app/dsapipeline.log 2>&1
+
+# Adicione uma linha em branco no final do arquivo, pois o cron exige.

@@ -1,0 +1,31 @@
+# Projeto 1 - Pipeline Financeiro - Automatizando Coleta, Limpeza e Armazenamento de Dados de Mercado em Tempo Real
+
+# Abra o terminal ou prompt de comando, navegue até a pasta com os arquivos e execute o comando abaixo para criar um ambiente virtual:
+
+conda create --name dsadtp1 python=3.13
+
+# Ative o ambiente:
+
+conda activate dsadtp1 (ou: source activate dsadtp1)
+
+# Instale o pip e as dependências:
+
+conda install pip
+pip install -r requirements.txt 
+
+# Execute o comando abaixo (execução local):
+
+python dsaprojeto1_local.py
+
+# Execute os comandos abaixo para automatizar a execução do script via Docker:
+
+docker build -t dsa-pipeline-p1-img .
+docker run -d --name dsa-pipeline-container -v "$(pwd)/dados_agendado:/data" dsa-pipeline-p1-img
+
+# Use os comandos abaixo para desativar o ambiente virtual e remover o ambiente (opcional):
+
+conda deactivate
+conda remove --name dsadtp1 --all
+
+
+
